@@ -8,22 +8,26 @@ public class PersonaData : MonoBehaviour
 {
     [Range(1, 10)]
     public int procentScore; //percentage van overeenkomst bij doelgroep
-    public List<MyEnum> shape;
-    public List<Color> color;
-    public Image picture;
 
-    public string statement;
-    public personamanager manager;
+    public List<MyEnum> shape; //defines which shapes the card has
+ 
+    public List<Color> color; //color define
+    
+    public Image picture; //visual of persona
 
-    private void OnValidate()
+    public string Note; //information about this card
+    
+    public personamanager manager; //refrence back to the manager (Not ideal)
+
+    private void OnValidate() //refresh Card in inspector with card on button
     {
         GetImage();
     }
+
     void GetImage()
     {
         picture = this.GetComponent<Button>().image;
     }
-    
 
     public enum MyEnum
     {
@@ -34,23 +38,24 @@ public class PersonaData : MonoBehaviour
         star,
         corner,
         zeshoek
-
     };
 
-    
     public void ConfirmChoice()
     {
-        Debug.Log(statement + this.gameObject.name);
-        if (statement == "correct")
-        {
-            Debug.Log(statement);
-            manager.Confirm();
-        }
-        else
-        {
-            Debug.Log("Wrong");
-            manager.Confirm();
-        }
+        Debug.Log(Note + this.gameObject.name);
+        //send data of card to blackboard of sorts
+        PlayerChoices.instance.AddAnswer(this);
+        manager.Confirm();
+        //if (Note == "correct")
+        //{
+        //    Debug.Log(Note);
+        //    
+        //}
+        //else
+        //{
+        //    Debug.Log("Wrong");
+        //    manager.Confirm();
+        //}
     }
 }
 

@@ -185,7 +185,7 @@ MonoBehaviour:
   - {r: 0, g: 0.6666667, b: 0.9803922, a: 0}
   - {r: 1, g: 0.12941177, b: 0.32941177, a: 0}
   picture: {fileID: 299918833}
-  statement: 
+  Note: 
   manager: {fileID: 1672865068}
 --- !u!114 &299918832
 MonoBehaviour:
@@ -664,7 +664,7 @@ MonoBehaviour:
   - {r: 1, g: 0.5803922, b: 0.03137255, a: 0}
   - {r: 0, g: 0.6666667, b: 0.9803922, a: 0}
   picture: {fileID: 1147101415}
-  statement: 
+  Note: 
   manager: {fileID: 1672865068}
 --- !u!114 &1147101414
 MonoBehaviour:
@@ -822,7 +822,7 @@ MonoBehaviour:
   - {r: 0, g: 0.6666667, b: 0.9803922, a: 0}
   - {r: 1, g: 0.1254902, b: 0.3254902, a: 0}
   picture: {fileID: 1272800961}
-  statement: 
+  Note: 
   manager: {fileID: 1672865068}
 --- !u!114 &1272800960
 MonoBehaviour:
@@ -1217,7 +1217,7 @@ MonoBehaviour:
   - {r: 1, g: 0.5803922, b: 0.03137255, a: 0}
   - {r: 0, g: 0.6627451, b: 0.9725491, a: 0}
   picture: {fileID: 1558003355}
-  statement: 
+  Note: 
   manager: {fileID: 1672865068}
 --- !u!114 &1558003354
 MonoBehaviour:
@@ -1314,6 +1314,7 @@ GameObject:
   - component: {fileID: 1672865065}
   - component: {fileID: 1672865064}
   - component: {fileID: 1672865068}
+  - component: {fileID: 1672865069}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1414,14 +1415,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be0ff450ba602ab478cb1c09d1a6d1ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data:
-  - {fileID: 2037579740}
-  - {fileID: 1147101413}
   options:
   - {fileID: 2037579738}
   - {fileID: 1147101410}
+  - {fileID: 299918828}
+  - {fileID: 1272800956}
   Opdracht:
   - {fileID: 1558003353}
+--- !u!114 &1672865069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1672865063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ba97b36318edcb4e8e1fa2814bde536, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1830616287
 GameObject:
   m_ObjectHideFlags: 0
@@ -1563,7 +1575,7 @@ MonoBehaviour:
   - {r: 1, g: 0.5803922, b: 0.03137255, a: 0}
   - {r: 0, g: 0.6666667, b: 0.9803922, a: 0}
   picture: {fileID: 2037579742}
-  statement: 
+  Note: 
   manager: {fileID: 1672865068}
 --- !u!114 &2037579741
 MonoBehaviour:
