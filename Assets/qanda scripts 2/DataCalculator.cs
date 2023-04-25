@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class DataCalculator : MonoBehaviour
 {
-    public string statement;
-    public personamanager manager;
+   public string statement;
+   public personamanager manager;
    public void ConfirmChoice()
     {
         Debug.Log(statement + this.gameObject.name);
-        if(statement == "leg uit")
+        if(statement == "correct")
         {
-            Debug.Log("correct");
+            Debug.Log(statement);
             manager.Confirm();
         }
         else

@@ -11,6 +11,10 @@ public class PersonaData : MonoBehaviour
     public List<MyEnum> shape;
     public List<Color> color;
     public Image picture;
+
+    public string statement;
+    public personamanager manager;
+
     private void OnValidate()
     {
         GetImage();
@@ -32,5 +36,21 @@ public class PersonaData : MonoBehaviour
         zeshoek
 
     };
+
+    
+    public void ConfirmChoice()
+    {
+        Debug.Log(statement + this.gameObject.name);
+        if (statement == "correct")
+        {
+            Debug.Log(statement);
+            manager.Confirm();
+        }
+        else
+        {
+            Debug.Log("Wrong");
+            manager.Confirm();
+        }
+    }
 }
 

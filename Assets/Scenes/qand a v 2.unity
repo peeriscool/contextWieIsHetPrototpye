@@ -421,11 +421,19 @@ PrefabInstance:
       value: 0.6198908
       objectReference: {fileID: 0}
     - target: {fileID: 3790944459652052846, guid: 277e4bc5c66579f448312de403910b43, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3790944459652052846, guid: 277e4bc5c66579f448312de403910b43, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3790944459652052846, guid: 277e4bc5c66579f448312de403910b43, type: 3}
       propertyPath: m_RaycastTarget
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3790944459652052846, guid: 277e4bc5c66579f448312de403910b43, type: 3}
+      propertyPath: m_UseSpriteMesh
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3790944459790026288, guid: 277e4bc5c66579f448312de403910b43, type: 3}
