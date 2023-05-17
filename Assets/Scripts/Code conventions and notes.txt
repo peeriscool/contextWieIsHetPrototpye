@@ -1,0 +1,16 @@
+Code Conventions
+
+Classes Capitalized / CamelCase
+functions CamelCase
+variables lowercase
+
+Buttons			Button_purpose_count
+Canvas			Canvas_purpose
+Text			Text_purpose_count
+
+
+https://www.youtube.com/watch?v=oHlHn5yHPMI pixel art point filter mode
+
+TO DO
+- menu scene
+- scenemanager
