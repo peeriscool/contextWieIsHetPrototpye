@@ -7,11 +7,11 @@ public class GameManager : MonoBehaviour
 {
     GameManager Instance;
     public float timer = 0;
+ //   FSM<s>
 
     private void Awake()
     {
         // If there is an instance, and it's not me, delete myself.
-
         if (Instance != null && Instance != this)
         {
             Destroy(this);
@@ -21,16 +21,14 @@ public class GameManager : MonoBehaviour
             Instance = this;
         }
     }
-    // Start is called before the first frame update
+
     void Start()
     {
         Debug.Log("Welkom screen activated");
         DontDestroyOnLoad(Instance);
-      
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
-    // Update is called once per frame
     void Update()
     {
      if(Input.GetKeyDown(KeyCode.W))
@@ -52,7 +50,6 @@ public class GameManager : MonoBehaviour
         Debug.Log("Finished Coroutine at timestamp : " + Time.time);
         AppendScene("LoopScreen");
     }
-  
  
     public void StartScene(string Scene) //single load scenes
     {
@@ -76,7 +73,6 @@ public class GameManager : MonoBehaviour
         }
         if(scene.name == "lvl0") //start een tijd is geld timer
         {
-         
             StartCoroutine(TijdCoroutine(120));
         }
         Debug.Log("OnSceneLoaded: " + scene.name);

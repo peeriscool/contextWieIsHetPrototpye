@@ -18,8 +18,4 @@ public static class PublicFunctions
         SceneManager.LoadScene(Scene, LoadSceneMode.Additive);
     }
 
-    public static void SimulateClick(Button button)
-    {
-        ExecuteEvents.Execute(button.gameObject, new BaseEventData(EventSystem.current), ExecuteEvents.submitHandler);
-    }
 }

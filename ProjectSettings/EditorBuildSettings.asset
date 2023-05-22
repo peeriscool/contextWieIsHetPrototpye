@@ -8,21 +8,27 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TitleScreen.unity
     guid: 6627ced1c93034042b12536ddc9935e2
-  - enabled: 0
-    path: Assets/Scenes/WieKiesJeLevel1.unity
-    guid: 21518038072a64d4b9e6cce33d9d6f82
   - enabled: 1
     path: Assets/Scenes/Reflectie.unity
     guid: 1933117b294233047a50ee7c3be503a1
   - enabled: 1
     path: Assets/Scenes/lvl0.unity
-    guid: 6d8983c7c4de08a4590cb6ec2e857eba
-  - enabled: 1
-    path: Assets/Scenes/lvl0 1.unity
     guid: c619e82c556db9b4291bc262083ea862
+  - enabled: 1
+    path: Assets/Scenes/lvl01.unity
+    guid: 6d8983c7c4de08a4590cb6ec2e857eba
   - enabled: 1
     path: Assets/Scenes/lvl02.unity
     guid: ff8266739fcb32942b14f2cc5a75a3ad
+  - enabled: 1
+    path: Assets/Scenes/lvl03.unity
+    guid: 6eb5eb5366a20c54baa454384e53aae3
+  - enabled: 1
+    path: Assets/Scenes/lvl04.unity
+    guid: 54d0800fe18be014c9c1a694d06ec878
+  - enabled: 1
+    path: Assets/Scenes/lvl05.unity
+    guid: b9915da63a6d3374da6b380e6f86f512
   - enabled: 1
     path: Assets/Scenes/Conclusie.unity
     guid: 94358929d0c407747ac9c7245a0490ea
