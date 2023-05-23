@@ -39,24 +39,15 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    /// <param time="time">seconden tot actie</param>
-    IEnumerator TijdCoroutine(int time)
-    {
-        //Print the time of when the function is first called.
-        Debug.Log("Started Coroutine at timestamp : " + Time.time);
-
-        //yield on a new YieldInstruction that waits for 5 seconds.
-        yield return new WaitForSeconds(time);
-
-        //After we have waited 5 seconds print the time again.
-        Debug.Log("Finished Coroutine at timestamp : " + Time.time);
-        AppendScene("LoopScreen");
-    }
- 
     public void StartScene(string Scene) //single load scenes
     {
       //  Debug.Log("Going to Scene: " + Scene);
         SceneManager.LoadScene(Scene, LoadSceneMode.Single);
+    }
+    public void NextScene() //single load scenes
+    {
+        //  Debug.Log("Going to Scene: " + Scene);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1, LoadSceneMode.Single);
     }
     public void AppendScene(string Scene) //single load scenes
     {
@@ -70,12 +61,40 @@ public class GameManager : MonoBehaviour
     {
         if(scene.name == "Menu")
         {
+            Debug.Log("Menu");
         }
         if(scene.name == "lvl0") //start een tijd is geld timer
         {
-            raycaster.assignCanvas(GameObject.Find("Canvas_SpeelVeld").GetComponent<Canvas>());
-            raycaster.assignCamera(Camera.main);
+            Debug.Log("Lvl 0");
+            //raycaster.assignCanvas(GameObject.Find("Canvas_SpeelVeld").GetComponent<Canvas>());
+            //raycaster.assignCamera(Camera.main);
+            AppendScene("UIscene");
         }
-        Debug.Log("OnSceneLoaded: " + scene.name);
+        if (scene.name == "lvl01")
+        {
+            AppendScene("UIscene");
+            Debug.Log("lvl01");
+        }
+        if (scene.name == "lvl02")
+        {
+            AppendScene("UIscene");
+            Debug.Log("lvl02");
+        }
+        if (scene.name == "lvl03")
+        {
+            AppendScene("UIscene");
+            Debug.Log("lvl03");
+        }
+        if (scene.name == "lvl04")
+        {
+            AppendScene("UIscene");
+            Debug.Log("lvl04");
+        }
+        if (scene.name == "lvl05")
+        {
+            AppendScene("UIscene");
+            Debug.Log("lvl05");
+        }
+        //  Debug.Log("OnSceneLoaded: " + scene.name);
     }
 }

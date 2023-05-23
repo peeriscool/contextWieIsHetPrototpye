@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 public class ObjectMover : MonoBehaviour, IDragHandler
@@ -17,4 +18,11 @@ public class ObjectMover : MonoBehaviour, IDragHandler
             rectTransform.anchoredPosition += eventData.delta; // Update the anchored position of the RectTransform based on the drag delta
         }
     }
+
+    public void OnEndDrag(PointerEventData eventData)
+    {
+        Debug.Log("Drag release");
+        this.gameObject.GetComponent<Button>().interactable = true;
+    }
+
 }
