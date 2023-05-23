@@ -9,7 +9,6 @@ public class CanvasRaycaster : MonoBehaviour
     public Canvas canvas; // Reference to the canvas to perform the raycast on
     [SerializeField]
     private float rayCastDistance = 1250f;
-    private RaycastHit hitObject;
    
     private void Update()
     {
@@ -31,7 +30,6 @@ public class CanvasRaycaster : MonoBehaviour
         {
             return EventSystem.current.IsPointerOverGameObject();
         }
-
         return false;
     }
 
@@ -60,7 +58,7 @@ public class CanvasRaycaster : MonoBehaviour
 
     private void PerformScreenSpaceOverlayRaycast(Ray ray)
     {
-        Debug.Log("overlay");
+        Debug.Log("using canvas Raycast");
         PointerEventData eventData = new PointerEventData(EventSystem.current);
         eventData.position = Input.mousePosition;
 
@@ -75,9 +73,13 @@ public class CanvasRaycaster : MonoBehaviour
                 // Process the hit UI element as desired
                 GameObject hitObject = result.gameObject;
                 Debug.Log("Hit UI element: " + hitObject.name);
-                if(hitObject.GetComponent<Button>())
+                if (hitObject.GetComponent<Button>())
                 {
-                    hitObject.AddComponent<ObjectMover>();
+                    if (! hitObject.GetComponent<ObjectMover>())
+                    {
+                        hitObject.AddComponent<ObjectMover>();
+                        hitObject.GetComponent<Button>().interactable = false;
+                    }
                 }
             }
         }
@@ -85,17 +87,26 @@ public class CanvasRaycaster : MonoBehaviour
 
     private void PerformScreenSpaceCameraRaycast(Ray ray)
     {
-        Debug.Log("screen");
+        Debug.Log("using screen raycast");
     }
 
     private void PerformWorldSpaceRaycast(Ray ray)
     {
-        Debug.Log("world");
+        Debug.Log("using world raycast");
     }
+
+    /// <summary>
+    /// assign the playingfield
+    /// </summary>
+    /// <param name="_canvas">assign the playingfield</param>
     public void assignCanvas(Canvas _canvas)
     {
         canvas = _canvas;
     }
+    /// <summary>
+    /// assign the camera for raycast
+    /// </summary>
+    /// <param name="_camera">assign the camera for raycast</param>
     public void assignCamera(Camera _camera)
     {
         raycastCamera = _camera;

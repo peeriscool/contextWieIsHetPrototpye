@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Conclusie.unity
     guid: 94358929d0c407747ac9c7245a0490ea
+  - enabled: 1
+    path: Assets/Scenes/UIscene.unity
+    guid: a21203aec144da64ca140792fada73bf
   m_configObjects: {}

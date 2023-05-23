@@ -70,11 +70,14 @@ public class GameManager : MonoBehaviour
     {
         if(scene.name == "Menu")
         {
+            Debug.Log("Menu");
         }
         if(scene.name == "lvl0") //start een tijd is geld timer
         {
+            Debug.Log("Lvl 0 assigning canvas and camera");
             raycaster.assignCanvas(GameObject.Find("Canvas_SpeelVeld").GetComponent<Canvas>());
             raycaster.assignCamera(Camera.main);
+            AppendScene("UIscene");
         }
         Debug.Log("OnSceneLoaded: " + scene.name);
     }
