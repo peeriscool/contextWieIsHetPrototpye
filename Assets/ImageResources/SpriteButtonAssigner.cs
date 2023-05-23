@@ -25,7 +25,7 @@ public class SpriteButtonAssigner : MonoBehaviour
         {
             // Get the image component of the button
             Image buttonImage = buttons[i].GetComponent<Image>();
-            buttons[i].GetComponent<Image>();
+            buttons[i].GetComponent<Text>();
             // Assign the corresponding sprite from the list
             buttonImage.sprite = spriteList[i];
         }

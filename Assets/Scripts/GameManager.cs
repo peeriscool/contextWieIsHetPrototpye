@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     GameManager Instance;
+    [SerializeField]
+    CanvasRaycaster raycaster;
     public float timer = 0;
  //   FSM<s>
 
@@ -68,12 +70,11 @@ public class GameManager : MonoBehaviour
     {
         if(scene.name == "Menu")
         {
-            StartCoroutine(TijdCoroutine(10));
-          //  StopCoroutine("MenuTijdCoroutine"); //na het niet meer detecteren van input
         }
         if(scene.name == "lvl0") //start een tijd is geld timer
         {
-            StartCoroutine(TijdCoroutine(120));
+            raycaster.assignCanvas(GameObject.Find("Canvas_SpeelVeld").GetComponent<Canvas>());
+            raycaster.assignCamera(Camera.main);
         }
         Debug.Log("OnSceneLoaded: " + scene.name);
     }
