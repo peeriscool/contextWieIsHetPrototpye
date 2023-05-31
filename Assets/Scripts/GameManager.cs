@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     CanvasRaycaster raycaster;
     public float timer = 0;
+    public Button ConfirmButton;
  //   FSM<s>
 
     private void Awake()
@@ -59,40 +61,43 @@ public class GameManager : MonoBehaviour
     /// </summary>  
     void OnSceneLoaded(Scene scene, LoadSceneMode mode) //zet het spel terug naar pasieve staat
     {
-        if(scene.name == "Menu")
+        if (scene.name == "Menu")
         {
             Debug.Log("Menu");
+          //  ConfirmButton.enabled = false;
         }
-        if(scene.name == "lvl0") //start een tijd is geld timer
+        if (scene.name == "lvl0") //start een tijd is geld timer
         {
+            ConfirmButton.enabled = true;
             Debug.Log("Lvl 0");
+
             //raycaster.assignCanvas(GameObject.Find("Canvas_SpeelVeld").GetComponent<Canvas>());
             //raycaster.assignCamera(Camera.main);
-            AppendScene("UIscene");
+         //   AppendScene("UIscene");
         }
         if (scene.name == "lvl01")
         {
-            AppendScene("UIscene");
+       //     AppendScene("UIscene");
             Debug.Log("lvl01");
         }
         if (scene.name == "lvl02")
         {
-            AppendScene("UIscene");
+       //     AppendScene("UIscene");
             Debug.Log("lvl02");
         }
         if (scene.name == "lvl03")
         {
-            AppendScene("UIscene");
+        //    AppendScene("UIscene");
             Debug.Log("lvl03");
         }
         if (scene.name == "lvl04")
         {
-            AppendScene("UIscene");
+        //    AppendScene("UIscene");
             Debug.Log("lvl04");
         }
         if (scene.name == "lvl05")
         {
-            AppendScene("UIscene");
+      //      AppendScene("UIscene");
             Debug.Log("lvl05");
         }
         //  Debug.Log("OnSceneLoaded: " + scene.name);
