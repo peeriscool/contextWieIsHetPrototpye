@@ -20,6 +20,16 @@ public class GameManager : MonoBehaviour
             Instance = this;
         }
     }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if(SceneManager.GetActiveScene().name == "DynamicQuestions V2")
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+            }
+        }
+    }
     void Start()
     {
         Debug.Log("Welkom screen activated");
@@ -27,7 +37,7 @@ public class GameManager : MonoBehaviour
         {
             handler.CreateJson();
         }
-        DontDestroyOnLoad(Instance);
+//        DontDestroyOnLoad(Instance);
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
     public void StartScene(string Scene) //single load scenes

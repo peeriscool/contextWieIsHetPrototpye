@@ -91,23 +91,23 @@ public class JsonHandler : MonoBehaviour
         Debug.LogWarning("datasetRead Error" + jsonFilePath);
         return dataset;
     }
-    public void CreateJson(string _question,int _answers, string[] _options)
-    {
-        Data data = new Data();
-        data.Question = _question;
-        data.answers = _answers;
-        data.opties = _options;
+    //public void CreateJson(string _question,int _answers, string[] _options)
+    //{
+    //    Data data = new Data();
+    //    data.Question = _question;
+    //    data.answers = _answers;
+    //    data.opties = _options;
 
-        dataset.dataset.Add(data);
+    //    dataset.dataset.Add(data);
 
-        string jsonData = JsonUtility.ToJson(data);
+    //    string jsonData = JsonUtility.ToJson(data);
 
-        // Write JSON data to a new file
-        string newJsonFilePath = "new_data.json";
-        File.WriteAllText(newJsonFilePath, jsonData);
+    //    // Write JSON data to a new file
+    //    string newJsonFilePath = "data.json";
+    //    File.WriteAllText(newJsonFilePath, jsonData);
 
-        Debug.Log("JSON file created: " + newJsonFilePath);
-    }
+    //    Debug.Log("JSON file created: " + newJsonFilePath);
+    //}
     public void CreateJson() //creates a file with default questions
     {
         DataSet dataset = new DataSet();
@@ -130,7 +130,7 @@ public class JsonHandler : MonoBehaviour
         string jsonData = JsonUtility.ToJson(dataset);
 
         // Write JSON data to a new file
-        string newJsonFilePath = "new_data.json";
+        string newJsonFilePath = "data.json";
         File.WriteAllText(newJsonFilePath, jsonData);
 
         Debug.Log("Created newJSON");
