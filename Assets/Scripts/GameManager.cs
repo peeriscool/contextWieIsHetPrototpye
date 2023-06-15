@@ -8,14 +8,9 @@ public class GameManager : MonoBehaviour
 {
     GameManager Instance;
     [SerializeField]
-    CanvasRaycaster raycaster;
-    public float timer = 0;
-    public Button ConfirmButton;
- //   FSM<s>
-
+    public JsonHandler handler;
     private void Awake()
     {
-        // If there is an instance, and it's not me, delete myself.
         if (Instance != null && Instance != this)
         {
             Destroy(this);
@@ -25,22 +20,16 @@ public class GameManager : MonoBehaviour
             Instance = this;
         }
     }
-
     void Start()
     {
         Debug.Log("Welkom screen activated");
+        if(handler.IfNonExsistent())
+        {
+            handler.CreateJson();
+        }
         DontDestroyOnLoad(Instance);
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
-
-    void Update()
-    {
-     if(Input.GetKeyDown(KeyCode.W))
-        {
-            Debug.Log(timer);
-        }
-    }
-
     public void StartScene(string Scene) //single load scenes
     {
       //  Debug.Log("Going to Scene: " + Scene);
@@ -48,12 +37,10 @@ public class GameManager : MonoBehaviour
     }
     public void NextScene() //single load scenes
     {
-        //  Debug.Log("Going to Scene: " + Scene);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1, LoadSceneMode.Single);
     }
     public void AppendScene(string Scene) //single load scenes
     {
-        //  Debug.Log("Going to Scene: " + Scene);
         SceneManager.LoadScene(Scene, LoadSceneMode.Additive);
     }
     /// <summary>
@@ -61,45 +48,16 @@ public class GameManager : MonoBehaviour
     /// </summary>  
     void OnSceneLoaded(Scene scene, LoadSceneMode mode) //zet het spel terug naar pasieve staat
     {
-        if (scene.name == "Menu")
+        if (scene.name == "TitleScreen")
         {
             Debug.Log("Menu");
-          //  ConfirmButton.enabled = false;
         }
-        if (scene.name == "lvl0") //start een tijd is geld timer
+        if (scene.name == "DynamicQuestions V2") //start een tijd is geld timer
         {
-            ConfirmButton.enabled = true;
-            Debug.Log("Lvl 0");
-
-            //raycaster.assignCanvas(GameObject.Find("Canvas_SpeelVeld").GetComponent<Canvas>());
-            //raycaster.assignCamera(Camera.main);
-         //   AppendScene("UIscene");
+         //   NavigationButton.enabled = true;
+       //     NavigationButton.interactable = true;
+            Debug.Log("DynamicQuestions");
         }
-        if (scene.name == "lvl01")
-        {
-       //     AppendScene("UIscene");
-            Debug.Log("lvl01");
-        }
-        if (scene.name == "lvl02")
-        {
-       //     AppendScene("UIscene");
-            Debug.Log("lvl02");
-        }
-        if (scene.name == "lvl03")
-        {
-        //    AppendScene("UIscene");
-            Debug.Log("lvl03");
-        }
-        if (scene.name == "lvl04")
-        {
-        //    AppendScene("UIscene");
-            Debug.Log("lvl04");
-        }
-        if (scene.name == "lvl05")
-        {
-      //      AppendScene("UIscene");
-            Debug.Log("lvl05");
-        }
-        //  Debug.Log("OnSceneLoaded: " + scene.name);
+      
     }
 }

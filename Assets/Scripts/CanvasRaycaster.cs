@@ -8,7 +8,7 @@ public class CanvasRaycaster : MonoBehaviour
     public Camera raycastCamera; // Reference to the camera used for raycasting
     public Canvas canvas; // Reference to the canvas to perform the raycast on
     [SerializeField]
-    private float rayCastDistance = 1250f;
+   // private float rayCastDistance = 1250f;
    
     private void Update()
     {

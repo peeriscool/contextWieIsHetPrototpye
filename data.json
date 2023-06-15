@@ -1,1 +1,1 @@
-{"Question":"ben je liever knap of slim","answers":4,"opties":["voorbeeld1","voorbeeld2","voorbeeld3"]}
+{"dataset":[{"Question":"What is the capital of France?","answers":4,"opties":["London","Berlin","Paris","Madrid"]},{"Question":"Who painted the Mona Lisa?","answers":4,"opties":["Pablo Picasso","Claude Monet","Leonardo da Vinci","Vincent van Gogh"]},{"Question 3":"What is the bedoeling?","answers":4,"opties":["een voldoende","geen doel","kort","Maandag"]}]}
